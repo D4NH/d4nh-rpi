@@ -1,29 +1,7 @@
 <template>
-  <div class="container">
+  <div>
 
     <div class="row">
-      <div class="col-sm">
-        <ul class="fa-ul list-inline header__icons">
-          <li class="list-inline-item">
-            <span class="fa-li">
-              <i class="fas fa-fw fa-lg fa-bolt"/>
-            </span>
-            <small>Energie verbruik</small>
-            <p>{{ consumption }} kWh</p>
-          </li>
-          <li class="list-inline-item">
-            <span class="fa-li">
-              <i class="far fa-fw fa-lg fa-money-bill-alt"/>
-            </span>
-            <small>Energie kosten</small>
-            <p>&euro; {{ costs }}</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="row">
-
       <div class="col-sm-3">
         <div class="card-group">
           <div class="card text-center">
@@ -64,7 +42,7 @@
               <div class="media">
                 <div class="media-body">
                   <p class="mt-0 card-title">
-                    <i class="fas fa-fw fa-lg fa-bell"/>
+                    <!-- <i class="fas fa-fw fa-lg fa-bell"/> -->
                     Voordeur
                     <br>
                     <small class="card-subtitle mb-2 text-muted">
@@ -85,7 +63,7 @@
               <div class="media">
                 <div class="media-body">
                   <p class="mt-0 card-title">
-                    <i class="fas fa-fw fa-lg fa-video"/>
+                    <!-- <i class="fas fa-fw fa-lg fa-video"/> -->
                     HIKvision
                     <br>
                     <small class="card-subtitle mb-2 text-muted">
@@ -107,7 +85,6 @@
           </div>
         </div>
       </div>
-
     </div>
 
     <div class="row">
@@ -116,24 +93,15 @@
         <div class="card-group">
           <div class="card text-center">
             <div class="card-body">
-              <p
-                v-for="(device, index) in devices"
-                v-if="device.idx === '70'"
-                :key="index"
-                class="card-title">
-                {{ device.Temp }} &deg;C
+              <p>{{ consumption }} kWh
                 <br>
-                <small
-                  v-for="(device, index) in devices"
-                  v-if="device.idx === '71'"
-                  :key="index"
-                  class="card-subtitle mb-2 text-muted">
-                  {{ device.Humidity }} %
+                <small class="card-subtitle mb-2 text-muted">
+                  Huidig
                 </small>
               </p>
               <p class="card-text">
                 <small class="text-muted">
-                  Slaapkamer
+                  Energie verbruik
                 </small>
               </p>
             </div>
@@ -152,7 +120,7 @@
               <div class="media">
                 <div class="media-body">
                   <p class="mt-0 card-title">
-                    <i class="fas fa-fw fa-lg fa-lightbulb"/>
+                    <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
                     {{ device.Name }}
                     <br>
                     <small class="card-subtitle mb-2 text-muted">
@@ -183,15 +151,15 @@
           <div class="card text-center">
             <div class="card-body">
               <p class="card-title">
-                Niet in gebruik
+                &euro; {{ costs }}
                 <br>
                 <small class="card-subtitle mb-2 text-muted">
-                  Geen
+                  Huidig
                 </small>
               </p>
               <p class="card-text">
                 <small class="text-muted">
-                  Niet van toepassing
+                  Energie kosten
                 </small>
               </p>
             </div>
@@ -214,8 +182,7 @@
                       :class="device.idx === '49' ? 'fa-tv' : 'fa-lightbulb'"
                       class="fas fa-fw fa-lg"/> -->
                     {{ device.Name }}
-                  </p>
-                  <p class="mb-0 card-text">
+                    <br>
                     <small class="card-subtitle mb-2 text-muted">
                       {{ device.idx === '49' ? 'UE55ES8000' : 'Lightstrip 5050 RGB' }}
                     </small>

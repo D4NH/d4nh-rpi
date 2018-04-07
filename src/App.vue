@@ -74,12 +74,45 @@
                   Apps
                 </router-link>
               </li>
-              <li class="nav-item">
-                <router-link
-                  class="nav-link"
-                  to="/smarthome/overzicht">
+              <li class="nav-item dropup">
+                <a
+                  id="navbarDropdownMenuLink"
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
                   SmartHome
-                </router-link>
+                </a>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink">
+                  <router-link
+                    class="dropdown-item"
+                    to="/smarthome/overzicht">
+                    Overzicht
+                  </router-link>
+                  <router-link
+                    class="dropdown-item"
+                    to="/smarthome/voordeur">
+                    Voordeur
+                  </router-link>
+                  <router-link
+                    class="dropdown-item"
+                    to="/smarthome/huiskamer">
+                    Huiskamer
+                  </router-link>
+                  <router-link
+                    class="dropdown-item"
+                    to="/smarthome/slaapkamer">
+                    Slaapkamer
+                  </router-link>
+                  <router-link
+                    class="dropdown-item"
+                    to="/smarthome/energie">
+                    Energie
+                  </router-link>
+                </div>
               </li>
             </ul>
             <small class="pull-right text-muted">&copy; 2018 Copyright Danh Nguyen | Front-End Developer</small>
@@ -173,11 +206,5 @@ export default {
 .footer {
     position: absolute;
     bottom: 0;
-
-    .nav-item {
-        .router-link-exact-active {
-            color: white;
-        }
-    }
 }
 </style>
