@@ -51,74 +51,28 @@
 
     <div class="footer">
 
-      <nav class="navbar navbar-expand-md navbar-dark fixed-bottom bg-dark">
+      <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"/>
-          </button>
-          <div
-            id="navbarCollapse"
-            class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <router-link
-                  class="nav-link"
-                  to="/">
-                  Apps
-                </router-link>
-              </li>
-              <li class="nav-item dropup">
-                <a
-                  id="navbarDropdownMenuLink"
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false">
-                  SmartHome
-                </a>
-                <div
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink">
-                  <router-link
-                    class="dropdown-item"
-                    to="/smarthome/overzicht">
-                    Overzicht
-                  </router-link>
-                  <router-link
-                    class="dropdown-item"
-                    to="/smarthome/voordeur">
-                    Voordeur
-                  </router-link>
-                  <router-link
-                    class="dropdown-item"
-                    to="/smarthome/huiskamer">
-                    Huiskamer
-                  </router-link>
-                  <router-link
-                    class="dropdown-item"
-                    to="/smarthome/slaapkamer">
-                    Slaapkamer
-                  </router-link>
-                  <router-link
-                    class="dropdown-item"
-                    to="/smarthome/energie">
-                    Energie
-                  </router-link>
-                </div>
-              </li>
-            </ul>
-            <small class="pull-right text-muted">&copy; 2018 Copyright Danh Nguyen | Front-End Developer</small>
-          </div>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                to="/">
+                Apps
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                to="/smarthome/overzicht">
+                SmartHome
+              </router-link>
+            </li>
+          </ul>
         </div>
       </nav>
+
+      <small class="pull-right text-muted">&copy; 2018 Copyright Danh Nguyen | Front-End Developer</small>
 
     </div>
 
@@ -159,6 +113,10 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+    margin-bottom: 50px;
+}
+
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity 0.3s ease;

@@ -4,7 +4,52 @@
     <div class="row">
 
       <div class="col-sm content-view">
-        <router-view/>
+
+        <div class="row">
+          <ul class="nav">
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                to="/smarthome/overzicht">
+                Overzicht
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                to="/smarthome/voordeur">
+                Voordeur
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                to="/smarthome/huiskamer">
+                Huiskamer
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                to="/smarthome/slaapkamer">
+                Slaapkamer
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                to="/smarthome/energie">
+                Energie
+              </router-link>
+            </li>
+          </ul>
+        </div>
+
+        <transition
+          name="fade"
+          mode="out-in">
+          <router-view/>
+        </transition>
       </div>
 
     </div>
@@ -26,5 +71,8 @@ export default {
     .row {
         margin-bottom: 10px;
     }
+}
+.nav {
+    margin-bottom: 20px;
 }
 </style>
