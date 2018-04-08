@@ -2,8 +2,7 @@
   <div class="container">
 
     <div class="row">
-
-      <ul class="nav flex-sm-column nav-fill text-center smart-nav">
+      <ul class="nav flex-sm-column text-center smart-nav">
         <li class="nav-item">
           <router-link
             class="nav-link"
@@ -47,7 +46,6 @@
       </ul>
 
       <div class="col-sm">
-
         <transition
           name="fade"
           mode="out-in">
@@ -56,7 +54,6 @@
           </div>
         </transition>
       </div>
-
     </div>
 
   </div>

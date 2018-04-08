@@ -135,6 +135,7 @@
                 </div>
                 <toggle-button
                   :value="device.Status === 'Off' ? false : true"
+                  :labels="{checked: 'Aan', unchecked: 'Uit'}"
                   class="align-self-center"
                   @change="toggleSwitch(device.idx)"/>
               </div>
