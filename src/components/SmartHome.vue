@@ -7,7 +7,7 @@
         <li class="nav-item">
           <router-link
             class="nav-link"
-            to="/smarthome/overzicht">
+            to="/smarthome/overview">
             <i class="fas fa-2x fa-fw fa-boxes"/><br>
             <span>Overview</span>
           </router-link>
@@ -15,15 +15,7 @@
         <li class="nav-item">
           <router-link
             class="nav-link"
-            to="/smarthome/voordeur">
-            <i class="fas fa-2x fa-fw fa-building"/><br>
-            <span>House</span>
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <router-link
-            class="nav-link"
-            to="/smarthome/huiskamer">
+            to="/smarthome/lights">
             <i class="fas fa-2x fa-fw fa-lightbulb"/><br>
             <span>Lights</span>
           </router-link>
@@ -31,7 +23,15 @@
         <li class="nav-item">
           <router-link
             class="nav-link"
-            to="/smarthome/slaapkamer">
+            to="/smarthome/house">
+            <i class="fas fa-2x fa-fw fa-building"/><br>
+            <span>House</span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link
+            class="nav-link"
+            to="/smarthome/temperature">
             <i class="fas fa-2x fa-fw fa-thermometer-half"/><br>
             <span>Temp</span>
           </router-link>
@@ -39,7 +39,7 @@
         <li class="nav-item">
           <router-link
             class="nav-link"
-            to="/smarthome/energie">
+            to="/smarthome/energy">
             <i class="fas fa-2x fa-fw fa-bolt"/><br>
             <span>Energy</span>
           </router-link>
@@ -51,7 +51,9 @@
         <transition
           name="fade"
           mode="out-in">
-          <router-view/>
+          <div class="smarthome">
+            <router-view/>
+          </div>
         </transition>
       </div>
 
@@ -83,6 +85,16 @@ export default {
     span {
       font-size: 10px;
     }
+  }
+}
+
+.smarthome {
+  .row {
+      margin-bottom: 10px;
+  }
+
+  .card {
+    min-height: 130px;
   }
 }
 </style>

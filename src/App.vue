@@ -51,26 +51,22 @@
 
     <div class="footer text-center">
 
-      <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
-        <div class="container">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <router-link
-                class="nav-link"
-                to="/">
-                Apps
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link
-                class="nav-link"
-                to="/smarthome/overzicht">
-                SmartHome
-              </router-link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <ul class="fixed-bottom nav nav-pills nav-fill bg-dark">
+        <li class="nav-item">
+          <router-link
+            class="nav-link"
+            to="/">
+            Apps
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link
+            class="nav-link"
+            to="/smarthome/overview">
+            SmartHome
+          </router-link>
+        </li>
+      </ul>
 
       <small class="text-muted">&copy; 2018 Copyright Danh Nguyen | Front-End Developer</small>
 
@@ -159,6 +155,16 @@ body {
             }
         }
     }
+}
+
+.footer {
+  .nav-link {
+    color: #ccc;
+
+    &.router-link-exact-active {
+      color: white;
+    }
+  }
 }
 
 </style>

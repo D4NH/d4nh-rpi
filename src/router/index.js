@@ -4,11 +4,11 @@ import Router from 'vue-router';
 import Dashboard from '@/components/Dashboard';
 
 import SmartHome from '@/components/SmartHome';
-import Overzicht from '@/components/smarthome/Overzicht';
-import Huiskamer from '@/components/smarthome/Huiskamer';
-import Slaapkamer from '@/components/smarthome/Slaapkamer';
-import Voordeur from '@/components/smarthome/Voordeur';
-import Energie from '@/components/smarthome/Energie';
+import Overview from '@/components/smarthome/Overview';
+import Lights from '@/components/smarthome/Lights';
+import Temperature from '@/components/smarthome/Temperature';
+import House from '@/components/smarthome/House';
+import Energy from '@/components/smarthome/Energy';
 
 Vue.use(Router);
 
@@ -25,24 +25,24 @@ export default new Router({
             component: SmartHome,
             children: [
                 {
-                    path: 'overzicht',
-                    component: Overzicht
+                    path: 'overview',
+                    component: Overview
                 },
                 {
-                    path: 'huiskamer',
-                    component: Huiskamer
+                    path: 'house',
+                    component: House
                 },
                 {
-                    path: 'slaapkamer',
-                    component: Slaapkamer
+                    path: 'temperature',
+                    component: Temperature
                 },
                 {
-                    path: 'energie',
-                    component: Energie
+                    path: 'energy',
+                    component: Energy
                 },
                 {
-                    path: 'voordeur',
-                    component: Voordeur
+                    path: 'lights',
+                    component: Lights
                 }
             ]
         }

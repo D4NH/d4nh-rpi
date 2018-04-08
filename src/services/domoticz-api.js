@@ -17,8 +17,8 @@ function getWeatherAPI() {
     return axios.get(getWeatherAPI).then(response => response);
 }
 
-function getDevicesAPI(filter) {
-    const devicesAPI = `${BASE_URL}/json.htm?type=devices&filter=${filter}&used=true&order=Name`;
+function getDevicesAPI() {
+    const devicesAPI = `${BASE_URL}/json.htm?type=devices&filter=all&used=true&order=Name`;
     return axios.get(devicesAPI).then(response => response);
 }
 
