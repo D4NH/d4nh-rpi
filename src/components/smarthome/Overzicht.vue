@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content-view">
 
     <div class="row">
       <div class="col-sm-3">
@@ -292,6 +292,15 @@ export default {
 </script>
 
 <style lang="scss">
+.content-view {
+    @media only screen and (min-width: 480px) {
+        padding: 0.5rem 1rem;
+    }
+    .row {
+        margin-bottom: 10px;
+    }
+}
+
 #hikvision {
     width: 150px;
 }

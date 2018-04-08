@@ -49,7 +49,7 @@
 
     </div>
 
-    <div class="footer">
+    <div class="footer text-center">
 
       <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
@@ -72,7 +72,7 @@
         </div>
       </nav>
 
-      <small class="pull-right text-muted">&copy; 2018 Copyright Danh Nguyen | Front-End Developer</small>
+      <small class="text-muted">&copy; 2018 Copyright Danh Nguyen | Front-End Developer</small>
 
     </div>
 
@@ -161,8 +161,4 @@ body {
     }
 }
 
-.footer {
-    position: absolute;
-    bottom: 0;
-}
 </style>
