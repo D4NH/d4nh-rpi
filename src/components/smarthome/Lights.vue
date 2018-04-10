@@ -6,69 +6,77 @@
     <div class="row">
       <div class="col-sm">
         Huiskamer
-        <div class="card">
-          <ul class="list-group list-group-flush">
-            <li
-              v-for="(device, index) in devices"
-              v-if="device.idx === '56' || device.idx === '57'"
-              :key="index"
-              class="list-group-item list-group-item-action"
-              @click="toggleSwitch(device.idx)">
-              <p class="mt-0 card-title">
-                <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
-                {{ device.Name }}
-                <br>
-                <small class="card-subtitle mb-2 text-muted">
-                  {{ device.HardwareType }}
-                </small>
-              </p>
-              <p class="mb-0 card-text">
-                <small class="text-muted">
-                  {{ device.LastUpdate | moment }}
-                </small>
-              </p>
+        <ul class="list-group">
+          <li
+            v-for="(device, index) in devices"
+            v-if="device.idx === '56' || device.idx === '57'"
+            :key="index"
+            class="list-group-item list-group-item-action"
+            @click="toggleSwitch(device.idx)">
+            <div class="media">
+              <div class="media-body">
+                <p class="mt-0 card-title">
+                  <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
+                  {{ device.Name }}
+                  <br>
+                  <small class="card-subtitle mb-2 text-muted">
+                    {{ device.HardwareType }}
+                  </small>
+                </p>
+                <p class="mb-0 card-text">
+                  <small class="text-muted">
+                    {{ device.LastUpdate | moment }}
+                  </small>
+                </p>
+              </div>
               <toggle-button
                 :value="device.Status === 'Off' ? false : true"
                 :labels="{checked: 'ON', unchecked: 'OFF'}"
                 :width="55"
+                class="align-self-center"
                 @change="toggleSwitch(device.idx)"/>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
 
     <div class="row">
       <div class="col-sm">
-        <div class="card">
-          <ul class="list-group list-group-flush">
-            <li
-              v-for="(device, index) in devices"
-              v-if="device.idx === '49' || device.idx === '3'"
-              :key="index"
-              class="list-group-item list-group-item-action"
-              @click="toggleSwitch(device.idx)">
-              <p class="mt-0 card-title">
-                <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
-                {{ device.Name }}
-                <br>
-                <small class="card-subtitle mb-2 text-muted">
-                  {{ device.HardwareType }}
-                </small>
-              </p>
-              <p class="mb-0 card-text">
-                <small class="text-muted">
-                  {{ device.LastUpdate | moment }}
-                </small>
-              </p>
+        <ul class="list-group">
+          <li
+            v-for="(device, index) in devices"
+            v-if="device.idx === '49' || device.idx === '3'"
+            :key="index"
+            class="list-group-item list-group-item-action"
+            @click="toggleSwitch(device.idx)">
+            <div class="media">
+              <div class="media-body">
+                <p class="mt-0 card-title">
+                  <!-- <i
+                    :class="device.idx === '49' ? 'fa-tv' : 'fa-lightbulb'"
+                    class="fas fa-fw fa-lg"/> -->
+                  {{ device.Name }}
+                  <br>
+                  <small class="card-subtitle mb-2 text-muted">
+                    {{ device.idx === '49' ? 'UE55ES8000' : 'Lightstrip 5050 RGB' }}
+                  </small>
+                </p>
+                <p class="mb-0 card-text">
+                  <small class="text-muted">
+                    {{ device.LastUpdate | moment }}
+                  </small>
+                </p>
+              </div>
               <toggle-button
                 :value="device.Status === 'Off' ? false : true"
                 :labels="{checked: 'ON', unchecked: 'OFF'}"
                 :width="55"
+                class="align-self-center"
                 @change="toggleSwitch(device.idx)"/>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -76,35 +84,38 @@
     <div class="row">
       <div class="col-sm">
         Keuken
-        <div class="card">
-          <ul class="list-group list-group-flush">
-            <li
-              v-for="(device, index) in devices"
-              v-if="device.idx === '1' || device.idx === '14'"
-              :key="index"
-              class="list-group-item list-group-item-action"
-              @click="toggleSwitch(device.idx)">
-              <p class="mt-0 card-title">
-                <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
-                {{ device.Name }}
-                <br>
-                <small class="card-subtitle mb-2 text-muted">
-                  {{ device.HardwareType }}
-                </small>
-              </p>
-              <p class="mb-0 card-text">
-                <small class="text-muted">
-                  {{ device.LastUpdate | moment }}
-                </small>
-              </p>
+        <ul class="list-group">
+          <li
+            v-for="(device, index) in devices"
+            v-if="device.idx === '1' || device.idx === '14'"
+            :key="index"
+            class="list-group-item list-group-item-action"
+            @click="toggleSwitch(device.idx)">
+            <div class="media">
+              <div class="media-body">
+                <p class="mt-0 card-title">
+                  <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
+                  {{ device.Name }}
+                  <br>
+                  <small class="card-subtitle mb-2 text-muted">
+                    {{ device.HardwareType }}
+                  </small>
+                </p>
+                <p class="mb-0 card-text">
+                  <small class="text-muted">
+                    {{ device.LastUpdate | moment }}
+                  </small>
+                </p>
+              </div>
               <toggle-button
                 :value="device.Status === 'Off' ? false : true"
                 :labels="{checked: 'ON', unchecked: 'OFF'}"
                 :width="55"
+                class="align-self-center"
                 @change="toggleSwitch(device.idx)"/>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -112,34 +123,37 @@
     <div class="row">
       <div class="col-sm">
         Slaapkamer
-        <div class="card">
-          <div class="list-group list-group-flush">
-            <li
-              v-for="(device, index) in devices"
-              v-if="device.idx === '77'"
-              :key="index"
-              class="list-group-item list-group-item-action"
-              @click="toggleSwitch(device.idx)">
-              <p class="mt-0 card-title">
-                <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
-                {{ device.Name }}
-                <br>
-                <small class="card-subtitle mb-2 text-muted">
-                  {{ device.HardwareType }}
-                </small>
-              </p>
-              <p class="mb-0 card-text">
-                <small class="text-muted">
-                  {{ device.LastUpdate | moment }}
-                </small>
-              </p>
+        <div class="list-group">
+          <li
+            v-for="(device, index) in devices"
+            v-if="device.idx === '77'"
+            :key="index"
+            class="list-group-item list-group-item-action"
+            @click="toggleSwitch(device.idx)">
+            <div class="media">
+              <div class="media-body">
+                <p class="mt-0 card-title">
+                  <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
+                  {{ device.Name }}
+                  <br>
+                  <small class="card-subtitle mb-2 text-muted">
+                    {{ device.HardwareType }}
+                  </small>
+                </p>
+                <p class="mb-0 card-text">
+                  <small class="text-muted">
+                    {{ device.LastUpdate | moment }}
+                  </small>
+                </p>
+              </div>
               <toggle-button
                 :value="device.Status === 'Off' ? false : true"
                 :labels="{checked: 'ON', unchecked: 'OFF'}"
                 :width="55"
+                class="align-self-center"
                 @change="toggleSwitch(device.idx)"/>
-            </li>
-          </div>
+            </div>
+          </li>
         </div>
       </div>
     </div>

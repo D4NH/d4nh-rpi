@@ -3,13 +3,11 @@
 
     <div class="row">
       <div class="col-sm">
-        <div class="card">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              Graph here
-            </li>
-          </ul>
-        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            Graph here
+          </li>
+        </ul>
       </div>
     </div>
   </div>
