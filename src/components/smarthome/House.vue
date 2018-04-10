@@ -23,10 +23,6 @@
                   {{ device.LastUpdate | moment }}
                 </small>
               </p>
-              <toggle-button
-                :value="device.Status === 'Off' ? false : true"
-                :labels="{checked: 'ON', unchecked: 'UIT'}"
-                @change="toggleSwitch(device.idx)"/>
             </li>
           </ul>
         </div>
@@ -57,7 +53,8 @@
               </p>
               <toggle-button
                 :value="device.Status === 'Off' ? false : true"
-                :labels="{checked: 'ON', unchecked: 'UIT'}"
+                :labels="{checked: 'ON', unchecked: 'OFF'}"
+                :width="55"
                 @change="toggleSwitch(device.idx)"/>
             </li>
           </ul>

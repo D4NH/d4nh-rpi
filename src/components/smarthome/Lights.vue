@@ -29,7 +29,8 @@
               </p>
               <toggle-button
                 :value="device.Status === 'Off' ? false : true"
-                :labels="{checked: 'ON', unchecked: 'UIT'}"
+                :labels="{checked: 'ON', unchecked: 'OFF'}"
+                :width="55"
                 @change="toggleSwitch(device.idx)"/>
             </li>
           </ul>
@@ -62,7 +63,8 @@
               </p>
               <toggle-button
                 :value="device.Status === 'Off' ? false : true"
-                :labels="{checked: 'ON', unchecked: 'UIT'}"
+                :labels="{checked: 'ON', unchecked: 'OFF'}"
+                :width="55"
                 @change="toggleSwitch(device.idx)"/>
             </li>
           </ul>
@@ -97,7 +99,8 @@
               </p>
               <toggle-button
                 :value="device.Status === 'Off' ? false : true"
-                :labels="{checked: 'ON', unchecked: 'UIT'}"
+                :labels="{checked: 'ON', unchecked: 'OFF'}"
+                :width="55"
                 @change="toggleSwitch(device.idx)"/>
             </li>
           </ul>
@@ -132,7 +135,8 @@
               </p>
               <toggle-button
                 :value="device.Status === 'Off' ? false : true"
-                :labels="{checked: 'ON', unchecked: 'UIT'}"
+                :labels="{checked: 'ON', unchecked: 'OFF'}"
+                :width="55"
                 @change="toggleSwitch(device.idx)"/>
             </li>
           </div>

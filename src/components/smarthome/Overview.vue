@@ -135,7 +135,8 @@
                 </div>
                 <toggle-button
                   :value="device.Status === 'Off' ? false : true"
-                  :labels="{checked: 'Aan', unchecked: 'Uit'}"
+                  :labels="{checked: 'ON', unchecked: 'OFF'}"
+                  :width="55"
                   class="align-self-center"
                   @change="toggleSwitch(device.idx)"/>
               </div>
@@ -196,6 +197,8 @@
                 </div>
                 <toggle-button
                   :value="device.Status === 'Off' ? false : true"
+                  :labels="{checked: 'ON', unchecked: 'OFF'}"
+                  :width="55"
                   class="align-self-center"
                   @change="toggleSwitch(device.idx)"/>
               </div>
