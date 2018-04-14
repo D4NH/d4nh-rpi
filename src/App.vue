@@ -123,6 +123,10 @@ body {
         url('./assets/StockSnap_6SMA09U7Y8.jpg') no-repeat;
     background-size: cover;
     background-position: center;
+
+    h1, h2, p {
+      text-shadow: 1px 1px 2px #aaa;
+    }
 }
 
 .footer {
