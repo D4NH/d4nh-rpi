@@ -1,33 +1,37 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <div class="card-deck">
-          <a
-            class="card list-group-item-action"
-            href="/domoticz/">
-            <div class="card-body">
-              <h5 class="card-title">Domoticz</h5>
-              <p class="card-text"><small class="text-muted">RFXCom 433MHz</small></p>
-            </div>
-          </a>
-          <a
-            class="card list-group-item-action"
-            href="/dsmr/">
-            <div class="card-body">
-              <h5 class="card-title">DSMR-reader</h5>
-              <p class="card-text"><small class="text-muted">Energy Consumption</small></p>
-            </div>
-          </a>
-          <a
-            class="card list-group-item-action"
-            href="/ipcam/">
-            <div class="card-body">
-              <h5 class="card-title">IP-cam</h5>
-              <p class="card-text"><small class="text-muted">HIKvision DS-2CD3345-I</small></p>
-            </div>
-          </a>
-        </div>
+    <div class="columns">
+      <div class="column">
+        <router-link
+          class="box"
+          to="/smarthome/overview">
+          <strong>SmartHome</strong>
+          <p class="card-text"><small class="text-muted">Dashboard</small></p>
+        </router-link>
+      </div>
+      <div class="column">
+        <a
+          class="box"
+          href="/domoticz/">
+          <strong>Domoticz</strong>
+          <p class="card-text"><small class="text-muted">RFXCom 433MHz</small></p>
+        </a>
+      </div>
+      <div class="column">
+        <a
+          class="box"
+          href="/dsmr/">
+          <strong>DSMR-reader</strong>
+          <p class="card-text"><small class="text-muted">Energy Consumption</small></p>
+        </a>
+      </div>
+      <div class="column">
+        <a
+          class="box"
+          href="/ipcam/">
+          <strong>IP-cam</strong>
+          <p class="card-text"><small class="text-muted">HIKvision DS-2CD3345-I</small></p>
+        </a>
       </div>
     </div>
   </div>

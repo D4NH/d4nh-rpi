@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
+import NotFound from '@/components/NotFound';
 import Dashboard from '@/components/Dashboard';
 
 import SmartHome from '@/components/SmartHome';
@@ -13,6 +14,7 @@ import Energy from '@/components/smarthome/Energy';
 Vue.use(Router);
 
 export default new Router({
+    mode: 'history',
     routes: [
         {
             path: '/',
@@ -45,6 +47,7 @@ export default new Router({
                     component: Lights
                 }
             ]
-        }
+        },
+        { path: '*', component: NotFound }
     ]
 });
