@@ -1,212 +1,159 @@
 <template>
-  <div class="overview">
+  <div class="container">
 
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="card-group">
-          <div class="card text-center">
-            <div class="card-body">
-              <p
-                v-for="(device, index) in devices"
-                v-if="device.idx === '67'"
-                :key="index"
-                class="card-title">
-                {{ device.Temp }} &deg;C
-                <br>
-                <small
-                  v-for="(device, index) in devices"
-                  v-if="device.idx === '68'"
-                  :key="index"
-                  class="card-subtitle mb-2 text-muted">
-                  {{ device.Humidity }} %
-                </small>
-              </p>
-              <p class="card-text">
-                <small class="text-muted">
-                  Huiskamer
-                </small>
-              </p>
-            </div>
-          </div>
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <div class="box is-vertical-aligned has-text-centered">
+          <p
+            v-for="(device, index) in devices"
+            v-if="device.idx === '67'"
+            :key="index">
+            {{ device.Temp }} &deg;C
+            <br>
+            <small
+              v-for="(device, index) in devices"
+              v-if="device.idx === '68'"
+              :key="index">
+              {{ device.Humidity }} %
+            </small>
+          </p>
+          <p>
+            <small>
+              Huiskamer
+            </small>
+          </p>
         </div>
       </div>
-
-      <div class="col-sm">
-        <div class="card-group">
-          <div
-            v-for="(device, index) in devices"
-            v-if="device.idx === '39'"
-            :key="index"
-            class="card">
-            <div class="card-body">
-              <div class="media">
-                <div class="media-body">
-                  <p class="mt-0 card-title">
-                    <!-- <i class="fas fa-fw fa-lg fa-bell"/> -->
-                    Voordeur
-                    <br>
-                    <small class="card-subtitle mb-2 text-muted">
-                      {{ device.Name }}
-                    </small>
-                  </p>
-                  <p class="mb-0 card-text">
-                    <small class="text-muted">
-                      {{ device.LastUpdate | moment }}
-                    </small>
-                  </p>
-                </div>
+      <div
+        v-for="(device, index) in devices"
+        v-if="device.idx === '39'"
+        :key="index"
+        class="column">
+        <div class="box is-vertical-aligned">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>Voordeur</strong><br>
+                  <small>{{ device.Name }}</small><br>
+                  <small class="is-size-7">{{ device.LastUpdate | moment }}</small>
+                </p>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="media">
-                <div class="media-body">
-                  <p class="mt-0 card-title">
-                    <!-- <i class="fas fa-fw fa-lg fa-video"/> -->
-                    HIKvision
-                    <br>
-                    <small class="card-subtitle mb-2 text-muted">
-                      DS-2CD3345-I
-                    </small>
-                  </p>
-                  <p class="mb-0 card-text">
-                    <small class="text-muted">
-                      <a href="#">Login</a>
-                    </small>
-                  </p>
-                </div>
-                <img
-                  id="hikvision"
-                  class="align-self-center rounded"
-                  src="">
+          </article>
+        </div>
+      </div>
+      <div class="column">
+        <div class="box is-vertical-aligned">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>HIKvision</strong><br>
+                  <small>DS-2CD3345-I</small><br>
+                  <small><a href="#">Login</a></small>
+                </p>
               </div>
             </div>
-          </div>
+            <div class="media-right">
+              <img
+                id="hikvision"
+                class="is-pulled-right"
+                src="">
+            </div>
+          </article>
         </div>
       </div>
     </div>
 
-    <div class="row">
-
-      <div class="col-sm-3">
-        <div class="card-group">
-          <div class="card text-center">
-            <div class="card-body">
-              <p>{{ consumption }} kWh
-                <br>
-                <small class="card-subtitle mb-2 text-muted">
-                  Huidig
-                </small>
-              </p>
-              <p class="card-text">
-                <small class="text-muted">
-                  Energie verbruik
-                </small>
-              </p>
-            </div>
-          </div>
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <div class="box is-vertical-aligned has-text-centered">
+          <p>
+            {{ consumption }} kWh
+            <br>
+            <small>
+              Huidig
+            </small>
+          </p>
+          <p>
+            <small>
+              Energie verbruik
+            </small>
+          </p>
         </div>
       </div>
-
-      <div class="col-sm">
-        <div class="card-group">
-          <div
-            v-for="(device, index) in devices"
-            v-if="device.idx === '56' || device.idx === '57'"
-            :key="index"
-            class="card">
-            <div class="card-body">
-              <div class="media">
-                <div class="media-body">
-                  <p class="mt-0 card-title">
-                    <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
-                    {{ device.Name }}
-                    <br>
-                    <small class="card-subtitle mb-2 text-muted">
-                      {{ device.HardwareType }}
-                    </small>
-                  </p>
-                  <p class="mb-0 card-text">
-                    <small class="text-muted">
-                      {{ device.LastUpdate | moment }}
-                    </small>
-                  </p>
-                </div>
-                <toggle-button
-                  :value="device.Status === 'Off' ? false : true"
-                  :labels="{checked: 'ON', unchecked: 'OFF'}"
-                  :width="55"
-                  class="align-self-center"
-                  @change="toggleSwitch(device.idx)"/>
+      <div
+        v-for="(device, index) in devices"
+        v-if="device.idx === '56' || device.idx === '57'"
+        :key="index"
+        class="column">
+        <div class="box is-vertical-aligned">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>{{ device.Name }}</strong><br>
+                  <toggle-button
+                    :value="device.Status === 'Off' ? false : true"
+                    :labels="{checked: 'ON', unchecked: 'OFF'}"
+                    :width="55"
+                    class="is-pulled-right"
+                    @change="toggleSwitch(device.idx)"/>
+                  <small>{{ device.HardwareType }}</small><br>
+                  <small class="is-size-7">{{ device.LastUpdate | moment }}</small>
+                </p>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </div>
 
-    <div class="row">
-
-      <div class="col-sm-3">
-        <div class="card-group">
-          <div class="card text-center">
-            <div class="card-body">
-              <p class="card-title">
-                &euro; {{ costs }}
-                <br>
-                <small class="card-subtitle mb-2 text-muted">
-                  Huidig
-                </small>
-              </p>
-              <p class="card-text">
-                <small class="text-muted">
-                  Energie kosten
-                </small>
-              </p>
-            </div>
-          </div>
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <div class="box is-vertical-aligned has-text-centered">
+          <p>
+            &euro; {{ costs }}
+            <br>
+            <small>
+              Huidig
+            </small>
+          </p>
+          <p>
+            <small>
+              Energie kosten
+            </small>
+          </p>
         </div>
       </div>
-
-      <div class="col-sm">
-        <div class="card-group">
-          <div
-            v-for="(device, index) in devices"
-            v-if="device.idx === '49' || device.idx === '3'"
-            :key="index"
-            class="card">
-            <div class="card-body">
-              <div class="media">
-                <div class="media-body">
-                  <p class="mt-0 card-title">
-                    <!-- <i
-                      :class="device.idx === '49' ? 'fa-tv' : 'fa-lightbulb'"
-                      class="fas fa-fw fa-lg"/> -->
-                    {{ device.Name }}
-                    <br>
-                    <small class="card-subtitle mb-2 text-muted">
-                      {{ device.idx === '49' ? 'UE55ES8000' : 'Lightstrip 5050 RGB' }}
-                    </small>
-                  </p>
-                  <p class="mb-0 card-text">
-                    <small class="text-muted">
-                      {{ device.LastUpdate | moment }}
-                    </small>
-                  </p>
-                </div>
-                <toggle-button
-                  :value="device.Status === 'Off' ? false : true"
-                  :labels="{checked: 'ON', unchecked: 'OFF'}"
-                  :width="55"
-                  class="align-self-center"
-                  @change="toggleSwitch(device.idx)"/>
+      <div
+        v-for="(device, index) in devices"
+        v-if="device.idx === '49' || device.idx === '3'"
+        :key="index"
+        class="column">
+        <div class="box is-vertical-aligned">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>{{ device.Name }}</strong><br>
+                  <toggle-button
+                    :value="device.Status === 'Off' ? false : true"
+                    :labels="{checked: 'ON', unchecked: 'OFF'}"
+                    :width="55"
+                    class="is-pulled-right"
+                    @change="toggleSwitch(device.idx)"/>
+                  <small>{{ device.HardwareType }}</small><br>
+                  <small class="is-size-7">{{ device.LastUpdate | moment }}</small>
+                </p>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -275,7 +222,8 @@ export default {
                     this.costs = response.total_cost;
                 })
                 .catch(error => {
-                    this.errorMsg = 'Alles is kapot!';
+                    this.consumption = 'Alles is kapot!';
+                    this.costs = 'Alles is kapot!';
                     return error;
                 });
         },

@@ -1,58 +1,70 @@
 <template>
   <div class="container">
 
-    <nav class="level">
-      <p class="level-item has-text-centered">
+    <div class="tabs">
+      <ul>
         <router-link
           class="link is-info"
+          active-class="is-active"
+          tag="li"
           to="/smarthome/overview">
-          <span class="icon is-medium">
-            <i class="fas fa-2x fa-fw fa-boxes"/><br>
-          </span>
-          <p class="is-size-7">Overview</p>
+          <a>
+            <span class="icon is-small">
+              <i class="fas fa-boxes"/><br>
+            </span>
+            <span>Overview</span>
+          </a>
         </router-link>
-      </p>
-      <p class="level-item has-text-centered">
         <router-link
           class="link is-info"
+          active-class="is-active"
+          tag="li"
           to="/smarthome/lights">
-          <span class="icon is-medium">
-            <i class="fas fa-2x fa-fw fa-lightbulb"/><br>
-          </span>
-          <p class="is-size-7">Lights</p>
+          <a>
+            <span class="icon is-small">
+              <i class="fas fa-lightbulb"/><br>
+            </span>
+            <span>Lights</span>
+          </a>
         </router-link>
-      </p>
-      <p class="level-item has-text-centered">
         <router-link
           class="link is-info"
+          active-class="is-active"
+          tag="li"
           to="/smarthome/house">
-          <span class="icon is-medium">
-            <i class="fas fa-2x fa-fw fa-building"/><br>
-          </span>
-          <p class="is-size-7">House</p>
+          <a>
+            <span class="icon is-small">
+              <i class="fas fa-building"/><br>
+            </span>
+            <span>House</span>
+          </a>
         </router-link>
-      </p>
-      <p class="level-item has-text-centered">
         <router-link
           class="link is-info"
+          active-class="is-active"
+          tag="li"
           to="/smarthome/temperature">
-          <span class="icon is-medium">
-            <i class="fas fa-2x fa-fw fa-thermometer-half"/><br>
-          </span>
-          <p class="is-size-7">Temp</p>
+          <a>
+            <span class="icon is-small">
+              <i class="fas fa-thermometer-half"/><br>
+            </span>
+            <span>Temp</span>
+          </a>
         </router-link>
-      </p>
-      <p class="level-item has-text-centered">
         <router-link
           class="link is-info"
+          active-class="is-active"
+          tag="li"
           to="/smarthome/energy">
-          <span class="icon is-medium">
-            <i class="fas fa-2x fa-fw fa-bolt"/><br>
-          </span>
-          <p class="is-size-7">Energy</p>
+          <a>
+            <span class="icon is-small">
+              <i class="fas fa-bolt"/><br>
+            </span>
+            <span>Energy</span>
+          </a>
         </router-link>
-      </p>
-    </nav>
+      </ul>
+    </div>
 
     <div class="columns">
       <div class="column">
@@ -76,32 +88,7 @@ export default {
 </script>
 
 <style lang="scss">
-.smart-nav {
-    @media only screen and (max-width: 480px) {
-        width: 100%;
-    }
-
-    .nav-link {
-        margin-bottom: 13px;
-        color: #ccc;
-
-        &.router-link-active {
-            color: #343a40;
-        }
-
-        span {
-            font-size: 10px;
-        }
-    }
-}
-
-.smarthome {
-    .row {
-        margin-bottom: 10px;
-    }
-
-    .card {
-        min-height: 130px;
-    }
+.box {
+    height: 100%;
 }
 </style>

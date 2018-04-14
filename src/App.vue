@@ -138,4 +138,10 @@ body {
         }
     }
 }
+
+.is-vertical-aligned {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 </style>
