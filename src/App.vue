@@ -54,17 +54,11 @@
       </transition>
     </section>
 
-    <section class="section">
-      <footer class="footer">
-        <div class="container">
-          <div class="content has-text-centered">
-            <p>
-              <small>&copy; 2018 Copyright <a href="https://www.danhnguyen.nl">Danh Nguyen</a> | Front-End Developer</small>
-            </p>
-          </div>
-        </div>
-      </footer>
-    </section>
+    <p class="has-text-centered">
+      <small class="is-size-7">
+        &copy; 2018 Copyright <a href="https://www.danhnguyen.nl">Danh Nguyen</a> | Front-End Developer
+      </small>
+    </p>
 
   </div>
 </template>
