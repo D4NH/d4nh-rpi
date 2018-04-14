@@ -3,66 +3,62 @@
 
     <div class="row">
       <div class="col-sm">
-        <div class="card">
-          <ul class="list-group list-group-flush">
-            <li
-              v-for="(device, index) in devices"
-              v-if="device.idx === '67' || device.idx === '68'"
-              :key="index"
-              class="list-group-item">
-              <p class="mt-0 card-title">
-                <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
-                <span v-if="device.Temp">{{ device.Temp }} &deg;C</span>
-                <span v-else>{{ device.Humidity }} %</span>
-                <br>
-                <small class="card-subtitle mb-2 text-muted">
-                  Huiskamer
-                </small>
-              </p>
-              <p class="mb-0 card-text">
-                <small class="text-muted">
-                  {{ device.LastUpdate | moment }}
-                </small>
-              </p>
-              <!-- <toggle-button
-                :value="device.Status === 'Off' ? false : true"
-                class="align-self-center"
-                @change="toggleSwitch(device.idx)"/> -->
-            </li>
-          </ul>
-        </div>
+        <ul class="list-group">
+          <li
+            v-for="(device, index) in devices"
+            v-if="device.idx === '67' || device.idx === '68'"
+            :key="index"
+            class="list-group-item">
+            <p class="mt-0 card-title">
+              <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
+              <span v-if="device.Temp">{{ device.Temp }} &deg;C</span>
+              <span v-else>{{ device.Humidity }} %</span>
+              <br>
+              <small class="card-subtitle mb-2 text-muted">
+                Huiskamer
+              </small>
+            </p>
+            <p class="mb-0 card-text">
+              <small class="text-muted">
+                {{ device.LastUpdate | moment }}
+              </small>
+            </p>
+            <!-- <toggle-button
+              :value="device.Status === 'Off' ? false : true"
+              class="align-self-center"
+              @change="toggleSwitch(device.idx)"/> -->
+          </li>
+        </ul>
       </div>
     </div>
     <div class="row">
       <div class="col-sm">
-        <div class="card">
-          <ul class="list-group list-group-flush">
-            <li
-              v-for="(device, index) in devices"
-              v-if="device.idx === '70' || device.idx === '71'"
-              :key="index"
-              class="list-group-item">
-              <p class="mt-0 card-title">
-                <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
-                <span v-if="device.Temp">{{ device.Temp }} &deg;C</span>
-                <span v-else>{{ device.Humidity }} %</span>
-                <br>
-                <small class="card-subtitle mb-2 text-muted">
-                  Slaapkamer
-                </small>
-              </p>
-              <p class="mb-0 card-text">
-                <small class="text-muted">
-                  {{ device.LastUpdate | moment }}
-                </small>
-              </p>
-              <!-- <toggle-button
-                :value="device.Status === 'Off' ? false : true"
-                class="align-self-center"
-                @change="toggleSwitch(device.idx)"/> -->
-            </li>
-          </ul>
-        </div>
+        <ul class="list-group">
+          <li
+            v-for="(device, index) in devices"
+            v-if="device.idx === '70' || device.idx === '71'"
+            :key="index"
+            class="list-group-item">
+            <p class="mt-0 card-title">
+              <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
+              <span v-if="device.Temp">{{ device.Temp }} &deg;C</span>
+              <span v-else>{{ device.Humidity }} %</span>
+              <br>
+              <small class="card-subtitle mb-2 text-muted">
+                Slaapkamer
+              </small>
+            </p>
+            <p class="mb-0 card-text">
+              <small class="text-muted">
+                {{ device.LastUpdate | moment }}
+              </small>
+            </p>
+            <!-- <toggle-button
+              :value="device.Status === 'Off' ? false : true"
+              class="align-self-center"
+              @change="toggleSwitch(device.idx)"/> -->
+          </li>
+        </ul>
       </div>
     </div>
   </div>
