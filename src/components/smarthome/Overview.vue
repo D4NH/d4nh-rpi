@@ -58,7 +58,7 @@
             <div class="media-right">
               <img
                 id="hikvision"
-                class="is-pulled-right"
+                class="media-image is-pulled-right"
                 src="">
             </div>
           </article>
@@ -244,7 +244,7 @@ export default {
 </script>
 
 <style lang="scss">
-#hikvision {
+.media-image {
     width: 150px;
 }
 </style>

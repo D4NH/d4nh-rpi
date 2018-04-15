@@ -1,67 +1,67 @@
 <template>
-  <div class="temperature">
 
-    <div class="row">
-      <div class="col-sm">
-        <ul class="list-group">
-          <li
-            v-for="(device, index) in devices"
-            v-if="device.idx === '67' || device.idx === '68'"
-            :key="index"
-            class="list-group-item">
-            <p class="mt-0 card-title">
-              <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
-              <span v-if="device.Temp">{{ device.Temp }} &deg;C</span>
-              <span v-else>{{ device.Humidity }} %</span>
-              <br>
-              <small class="card-subtitle mb-2 text-muted">
-                Huiskamer
-              </small>
-            </p>
-            <p class="mb-0 card-text">
-              <small class="text-muted">
-                {{ device.LastUpdate | moment }}
-              </small>
-            </p>
-            <!-- <toggle-button
-              :value="device.Status === 'Off' ? false : true"
-              class="align-self-center"
-              @change="toggleSwitch(device.idx)"/> -->
-          </li>
-        </ul>
+  <div class="container temperature">
+
+    <p class="title">Huiskamer</p>
+    <div
+      v-for="(device, index) in devices"
+      v-if="device.idx === '67' || device.idx === '68'"
+      :key="index"
+      class="columns">
+      <div class="column">
+        <div class="box is-vertical-aligned">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>{{ device.Name }}</strong><br>
+                  <toggle-button
+                    :value="device.Status === 'Off' ? false : true"
+                    :labels="{checked: 'ON', unchecked: 'OFF'}"
+                    :width="55"
+                    class="is-pulled-right"
+                    @change="toggleSwitch(device.idx)"/>
+                  <small>{{ device.HardwareType }}</small><br>
+                  <small class="is-size-7">{{ device.LastUpdate | moment }}</small>
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm">
-        <ul class="list-group">
-          <li
-            v-for="(device, index) in devices"
-            v-if="device.idx === '70' || device.idx === '71'"
-            :key="index"
-            class="list-group-item">
-            <p class="mt-0 card-title">
-              <!-- <i class="fas fa-fw fa-lg fa-lightbulb"/> -->
-              <span v-if="device.Temp">{{ device.Temp }} &deg;C</span>
-              <span v-else>{{ device.Humidity }} %</span>
-              <br>
-              <small class="card-subtitle mb-2 text-muted">
-                Slaapkamer
-              </small>
-            </p>
-            <p class="mb-0 card-text">
-              <small class="text-muted">
-                {{ device.LastUpdate | moment }}
-              </small>
-            </p>
-            <!-- <toggle-button
-              :value="device.Status === 'Off' ? false : true"
-              class="align-self-center"
-              @change="toggleSwitch(device.idx)"/> -->
-          </li>
-        </ul>
+
+    <p class="title">Slaapkamer</p>
+    <div
+      v-for="(device, index) in devices"
+      v-if="device.idx === '70' || device.idx === '71'"
+      :key="index"
+      class="columns">
+      <div class="column">
+        <div class="box is-vertical-aligned">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>{{ device.Name }}</strong><br>
+                  <toggle-button
+                    :value="device.Status === 'Off' ? false : true"
+                    :labels="{checked: 'ON', unchecked: 'OFF'}"
+                    :width="55"
+                    class="is-pulled-right"
+                    @change="toggleSwitch(device.idx)"/>
+                  <small>{{ device.HardwareType }}</small><br>
+                  <small class="is-size-7">{{ device.LastUpdate | moment }}</small>
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
+
   </div>
+
 </template>
 
 <script>
