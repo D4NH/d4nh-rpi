@@ -33,7 +33,6 @@
                 <p>
                   <strong>HIKvision</strong><br>
                   <small>DS-2CD3345-I</small><br>
-                  <small class="is-size-7"><a href="#">Login</a></small>
                 </p>
               </div>
             </div>
@@ -98,6 +97,9 @@ export default {
     mounted() {
         this.getDevices();
         this.timer = setInterval(this.getCamStream, 5000);
+    },
+    beforeDestroy() {
+        this.cancelAutoUpdate();
     },
     methods: {
         getCamStream() {

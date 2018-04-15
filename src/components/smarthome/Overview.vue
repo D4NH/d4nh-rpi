@@ -160,7 +160,7 @@
 <script>
 import moment from 'moment';
 import { getDSMRAPI } from '@/services/dsmr-api.js';
-import { getDevicesAPI } from '@/services/domoticz-api';
+import { getDevicesAPI, getToggleAPI } from '@/services/domoticz-api';
 
 import Vue from 'vue';
 import ToggleButton from 'vue-js-toggle-button';
@@ -228,16 +228,15 @@ export default {
                 });
         },
         toggleSwitch(deviceId) {
-            console.log('clicked', deviceId);
-            // getToggleAPI(deviceId)
-            //     .then(response => {
-            //         this.getDevices();
-            //     })
-            //     .catch(error => {
-            //         this.errorMsg = 'Alles is kapot!';
-            //         this.devices = null;
-            //         return error;
-            //     });
+            getToggleAPI(deviceId)
+                .then(response => {
+                    this.getDevices();
+                })
+                .catch(error => {
+                    this.errorMsg = 'Alles is kapot!';
+                    this.devices = null;
+                    return error;
+                });
         }
     }
 };
