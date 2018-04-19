@@ -5,7 +5,7 @@
       <div class="tile is-5 is-vertical is-parent">
         <div
           v-for="(device, index) in devices"
-          v-if="device.idx === '39' || device.idx === '31' || device.idx === '46'"
+          v-if="device.idx === '89' || device.idx === '31' || device.idx === '39'"
           :key="index"
           class="columns">
           <div class="column">

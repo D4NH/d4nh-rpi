@@ -4,11 +4,11 @@
     <section class="hero is-medium is-dark">
       <div class="hero-foot">
         <div class="container">
-          <h1 class="title">
             -
+          <h1 class="title has-text-centered-mobile">
           </h1>
-          <h2 class="subtitle">
             -
+          <h2 class="subtitle has-text-centered-mobile">
           </h2>
           <div class="level">
             <ul class="level-left">
@@ -111,7 +111,10 @@ body {
 }
 
 .hero {
+    padding-top: 20px;
+    @media (min-width: 420px) {
     padding-top: 150px;
+    }
     padding-bottom: 20px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%),
         url('./assets/StockSnap_6SMA09U7Y8.jpg') no-repeat;
@@ -119,7 +122,13 @@ body {
     background-position: center;
 
     h1, h2, p {
-      text-shadow: 1px 1px 2px #aaa;
+      text-shadow: 1px 1px 2px #111;
+    }
+}
+
+.level {
+  @media (min-width: 420px) {
+    margin-left: -10px;
     }
 }
 
