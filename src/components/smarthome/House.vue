@@ -1,46 +1,43 @@
 <template>
 
   <div class="container house">
+
     <div class="tile is-ancestor">
-      <div class="tile is-5 is-vertical is-parent">
-        <div
+      <div class="tile is-parent is-vertical">
+        <article
           v-for="(device, index) in devices"
           v-if="device.idx === '89' || device.idx === '31' || device.idx === '39'"
           :key="index"
-          class="columns">
-          <div class="column">
-            <div class="tile is-child box is-vertical-aligned">
-              <article class="media">
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>{{ device.Name }}</strong><br>
-                      <small>{{ device.HardwareType }}</small><br>
-                      <small class="is-size-7">{{ device.LastUpdate | moment }}</small>
-                    </p>
-                  </div>
+          class="tile is-child">
+          <div class="tile is-child box is-vertical-aligned">
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>{{ device.Name }}</strong><br>
+                    <small>{{ device.HardwareType }}</small><br>
+                    <small class="is-size-7">{{ device.LastUpdate | moment }}</small>
+                  </p>
                 </div>
-              </article>
-            </div>
+              </div>
+            </article>
           </div>
-        </div>
+        </article>
       </div>
       <div class="tile is-parent">
-        <div class="tile is-child box">
-          <article class="media">
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <strong>HIKvision</strong><br>
-                  <small>DS-2CD3345-I</small><br>
-                </p>
-              </div>
+        <article class="tile is-child box media">
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>HIKvision</strong><br>
+                <small>DS-2CD3345-I</small><br>
+              </p>
+              <img
+                id="hikvision"
+                src="">
             </div>
-          </article>
-          <img
-            id="hikvision"
-            src="">
-        </div>
+          </div>
+        </article>
       </div>
     </div>
 
