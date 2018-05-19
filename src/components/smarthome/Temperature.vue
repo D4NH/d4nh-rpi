@@ -22,13 +22,22 @@
               </div>
             </div>
           </article>
+          <br>
+          <line-chart
+            v-if="device.idx === '67'"
+            :border-color="'orange'"
+            :title-text="'Temperatuur'"
+            :chart-data="huiskamerTempData"
+            :chart-label="huiskamerTempLabel"
+          />
+          <line-chart
+            v-if="device.idx === '68'"
+            :border-color="'green'"
+            :title-text="'Luchtvochtigheid'"
+            :chart-data="huiskamerLuchtData"
+            :chart-label="huiskamerLuchtLabel"
+          />
         </div>
-      </div>
-    </div>
-
-    <div class="columns">
-      <div class="column">
-        Chart here
       </div>
     </div>
 
@@ -53,6 +62,21 @@
               </div>
             </div>
           </article>
+          <br>
+          <line-chart
+            v-if="device.idx === '70'"
+            :border-color="'orange'"
+            :title-text="'Temperatuur'"
+            :chart-data="slaapkamerTempData"
+            :chart-label="slaapkamerTempLabel"
+          />
+          <line-chart
+            v-if="device.idx === '71'"
+            :border-color="'green'"
+            :title-text="'Luchtvochtigheid'"
+            :chart-data="slaapkamerLuchtData"
+            :chart-label="slaapkamerLuchtLabel"
+          />
         </div>
       </div>
     </div>
@@ -78,6 +102,21 @@
               </div>
             </div>
           </article>
+          <br>
+          <line-chart
+            v-if="device.idx === '86'"
+            :border-color="'orange'"
+            :title-text="'Temperatuur'"
+            :chart-data="kinderkamerTempData"
+            :chart-label="kinderkamerTempLabel"
+          />
+          <line-chart
+            v-if="device.idx === '87'"
+            :border-color="'green'"
+            :title-text="'Luchtvochtigheid'"
+            :chart-data="kinderkamerLuchtData"
+            :chart-label="kinderkamerLuchtLabel"
+          />
         </div>
       </div>
     </div>
@@ -88,15 +127,19 @@
 
 <script>
 import moment from 'moment';
-import { getDevicesAPI } from '@/services/domoticz-api';
+import { getDevicesAPI, getGraphData } from '@/services/domoticz-api';
+
+import LineChart from '../LineChart';
 
 import Vue from 'vue';
 import ToggleButton from 'vue-js-toggle-button';
-
 Vue.use(ToggleButton);
 
 export default {
     name: 'Temperature',
+    components: {
+        LineChart
+    },
     filters: {
         roundUp(value) {
             return Math.ceil(value);
@@ -108,11 +151,24 @@ export default {
     data() {
         return {
             devices: [],
+            huiskamerTempData: [],
+            huiskamerTempLabel: [],
+            huiskamerLuchtData: [],
+            huiskamerLuchtLabel: [],
+            slaapkamerTempData: [],
+            slaapkamerTempLabel: [],
+            slaapkamerLuchtData: [],
+            slaapkamerLuchtLabel: [],
+            kinderkamerTempData: [],
+            kinderkamerTempLabel: [],
+            kinderkamerLuchtData: [],
+            kinderkamerLuchtLabel: [],
             errorMsg: null
         };
     },
     mounted() {
         this.getDevices();
+        this.getCharts();
     },
     methods: {
         getDevices() {
@@ -125,11 +181,90 @@ export default {
                     this.devices = null;
                     return error;
                 });
+        },
+        getCharts() {
+            getGraphData(67, 'day')
+                .then(response => {
+                    for (let index = 0; index < response.data.result.length; index++) {
+                        const element = response.data.result[index];
+                        this.huiskamerTempData.push(element.te);
+                        this.huiskamerTempLabel.push(element.d.split(' ')[1]);
+                    }
+                })
+                .catch(error => {
+                    this.errorMsg = 'Alles is kapot!';
+                    this.huiskamerTempData = null;
+                    return error;
+                });
+            getGraphData(68, 'day')
+                .then(response => {
+                    for (let index = 0; index < response.data.result.length; index++) {
+                        const element = response.data.result[index];
+                        this.huiskamerLuchtData.push(element.hu);
+                        this.huiskamerLuchtLabel.push(element.d.split(' ')[1]);
+                    }
+                })
+                .catch(error => {
+                    this.errorMsg = 'Alles is kapot!';
+                    this.huiskamerLuchtData = null;
+                    return error;
+                });
+            getGraphData(70, 'day')
+                .then(response => {
+                    for (let index = 0; index < response.data.result.length; index++) {
+                        const element = response.data.result[index];
+                        this.slaapkamerTempData.push(element.te);
+                        this.slaapkamerTempLabel.push(element.d.split(' ')[1]);
+                    }
+                })
+                .catch(error => {
+                    this.errorMsg = 'Alles is kapot!';
+                    this.slaapkamerTempData = null;
+                    return error;
+                });
+            getGraphData(71, 'day')
+                .then(response => {
+                    for (let index = 0; index < response.data.result.length; index++) {
+                        const element = response.data.result[index];
+                        this.slaapkamerLuchtData.push(element.hu);
+                        this.slaapkamerLuchtLabel.push(element.d.split(' ')[1]);
+                    }
+                })
+                .catch(error => {
+                    this.errorMsg = 'Alles is kapot!';
+                    this.slaapkamerLuchtData = null;
+                    return error;
+                });
+            getGraphData(86, 'day')
+                .then(response => {
+                    for (let index = 0; index < response.data.result.length; index++) {
+                        const element = response.data.result[index];
+                        this.kinderkamerTempData.push(element.te);
+                        this.kinderkamerTempLabel.push(element.d.split(' ')[1]);
+                    }
+                })
+                .catch(error => {
+                    this.errorMsg = 'Alles is kapot!';
+                    this.kinderkamerTempData = null;
+                    return error;
+                });
+            getGraphData(87, 'day')
+                .then(response => {
+                    for (let index = 0; index < response.data.result.length; index++) {
+                        const element = response.data.result[index];
+                        this.kinderkamerLuchtData.push(element.hu);
+                        this.kinderkamerLuchtLabel.push(element.d.split(' ')[1]);
+                    }
+                })
+                .catch(error => {
+                    this.errorMsg = 'Alles is kapot!';
+                    this.kinderkamerLuchtData = null;
+                    return error;
+                });
         }
     }
 };
 </script>
 
 <style lang="scss">
-
 </style>

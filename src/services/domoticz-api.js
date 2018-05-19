@@ -5,7 +5,7 @@ const BASE_URL =
         ? 'http://192.168.0.101:8080'
         : 'https://thuis.danhnguyen.nl/domoticz';
 
-export { getSunriseAPI, getDevicesAPI, getToggleAPI, getWeatherAPI, getLogAPI };
+export { getSunriseAPI, getDevicesAPI, getToggleAPI, getWeatherAPI, getLogAPI, getGraphData };
 
 function getSunriseAPI() {
     const getSunriseAPI = `${BASE_URL}/json.htm?type=command&param=getSunRiseSet`;
@@ -17,8 +17,13 @@ function getWeatherAPI() {
     return axios.get(getWeatherAPI).then(response => response);
 }
 
-function getDevicesAPI() {
-    const devicesAPI = `${BASE_URL}/json.htm?type=devices&filter=all&used=true&order=Name`;
+function getDevicesAPI(FILTER = 'all') {
+    const devicesAPI = `${BASE_URL}/json.htm?type=devices&filter=${FILTER}&used=true&order=Name`;
+    return axios.get(devicesAPI).then(response => response);
+}
+
+function getGraphData(IDX = 67, RANGE = 'day') {
+    const devicesAPI = `${BASE_URL}/json.htm?idx=${IDX}&range=${RANGE}&sensor=temp&type=graph`;
     return axios.get(devicesAPI).then(response => response);
 }
 

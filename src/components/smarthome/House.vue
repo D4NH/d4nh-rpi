@@ -53,6 +53,11 @@
               <div class="content">
                 <p>
                   <strong>{{ device.Name }}</strong><br>
+                  <toggle-button
+                    :value="device.Status === 'Off' ? false : true"
+                    :labels="{checked: 'ON', unchecked: 'OFF'}"
+                    :width="55"
+                    class="is-pulled-right"/>
                   <small>{{ device.HardwareType }}</small><br>
                   <small class="is-size-7">{{ device.LastUpdate | moment }}</small>
                 </p>
@@ -138,5 +143,4 @@ export default {
 </script>
 
 <style lang="scss">
-
 </style>
