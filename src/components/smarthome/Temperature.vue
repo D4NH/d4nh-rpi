@@ -166,9 +166,9 @@ export default {
             errorMsg: null
         };
     },
-    mounted() {
-        this.getDevices();
+    created() {
         this.getCharts();
+        this.getDevices();
     },
     methods: {
         getDevices() {

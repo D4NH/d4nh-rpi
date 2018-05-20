@@ -117,7 +117,7 @@ export default {
             errorMsg: null
         };
     },
-    mounted() {
+    created() {
         this.getDevices();
     },
     methods: {

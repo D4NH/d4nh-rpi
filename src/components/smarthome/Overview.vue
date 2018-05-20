@@ -184,10 +184,12 @@ export default {
             errorMsg: null
         };
     },
-    mounted() {
-        this.timer = setInterval(this.getCamStream, 5000);
+    created() {
         this.getDSMRData();
         this.getDevices();
+    },
+    mounted() {
+        this.timer = setInterval(this.getCamStream, 5000);
     },
     beforeDestroy() {
         this.cancelAutoUpdate();

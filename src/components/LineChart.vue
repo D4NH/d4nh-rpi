@@ -29,7 +29,7 @@ export default {
                     {
                         label: this.titleText,
                         borderColor: this.borderColor,
-                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        fill: false,
                         data: this.chartData
                     }
                 ]
