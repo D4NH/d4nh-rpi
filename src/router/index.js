@@ -14,7 +14,6 @@ import Energy from '@/components/smarthome/Energy';
 Vue.use(Router);
 
 export default new Router({
-    mode: 'history',
     routes: [
         {
             path: '/',

@@ -167,7 +167,7 @@ export default {
         };
     },
     created() {
-        this.getCharts();
+        this.getTemperature();
         this.getDevices();
     },
     methods: {
@@ -182,7 +182,7 @@ export default {
                     return error;
                 });
         },
-        getCharts() {
+        getTemperature() {
             getGraphData(67, 'day')
                 .then(response => {
                     for (let index = 0; index < response.data.result.length; index++) {

@@ -5,7 +5,12 @@
       <div class="col-sm">
         <ul class="list-group">
           <li class="list-group-item">
-            Graph here
+            <line-chart
+              v-if="loaded"
+              :laag-verbruik="laagVerbruik"
+              :hoog-verbruik="hoogVerbruik"
+              :chart-label="chartLabel"
+            />
           </li>
         </ul>
       </div>
@@ -16,33 +21,47 @@
 <script>
 import moment from 'moment';
 import { getDSMRAPI } from '@/services/dsmr-api.js';
+import LineChart from '../DSMRChart';
 
 export default {
     name: 'Energy',
-    filters: {
-        roundUp(value) {
-            return Math.ceil(value);
-        },
-        moment(date) {
-            return moment(date).fromNow();
-        }
+    components: {
+        LineChart
     },
     data() {
         return {
-            consumption: '-',
-            costs: '-',
+            loaded: false,
+            hoogVerbruik: [],
+            laagVerbruik: [],
+            chartLabel: [],
             errorMsg: null
         };
     },
-    mounted() {
+    created() {
         this.getDSMRData();
     },
     methods: {
         getDSMRData() {
-            getDSMRAPI()
+            getDSMRAPI(
+                'statistics',
+                'hour',
+                '?hour_start__gte=' +
+                    moment()
+                        .subtract(2, 'days')
+                        .format('YYYY-MM-DD') +
+                    '&hour_start__lte=' +
+                    moment()
+                        .subtract(1, 'days')
+                        .format('YYYY-MM-DD')
+            )
                 .then(response => {
-                    this.consumption = parseFloat(response.electricity1 + response.electricity2).toFixed(2);
-                    this.costs = response.total_cost;
+                    for (let index = 0; index < response.results.length; index++) {
+                        const element = response.results[index];
+                        this.laagVerbruik.push(element.electricity1);
+                        this.hoogVerbruik.push(element.electricity2);
+                        this.chartLabel.push(moment(element.hour_start).format('HH:mm'));
+                    }
+                    this.loaded = true;
                 })
                 .catch(error => {
                     this.errorMsg = 'Alles is kapot!';
@@ -54,5 +73,4 @@ export default {
 </script>
 
 <style lang="scss">
-
 </style>
