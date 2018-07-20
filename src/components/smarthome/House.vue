@@ -15,6 +15,18 @@
                 <div class="content">
                   <p>
                     <strong>{{ device.Name }}</strong><br>
+                    <toggle-button
+                      v-if="device.idx === '31'"
+                      :value="device.Status === 'Off' ? false : true"
+                      :labels="{checked: 'CLOSED', unchecked: 'OPENED'}"
+                      :width="75"
+                      class="is-pulled-right"/>
+                    <toggle-button
+                      v-if="device.idx === '89'"
+                      :value="device.Status === 'Off' ? false : true"
+                      :labels="{checked: 'CLOSED', unchecked: 'OPENED'}"
+                      :width="75"
+                      class="is-pulled-right"/>
                     <small>{{ device.HardwareType }}</small><br>
                     <small class="is-size-7">{{ device.LastUpdate | moment }}</small>
                   </p>
@@ -100,7 +112,7 @@ export default {
         this.getDevices();
     },
     mounted() {
-        this.timer = setInterval(this.getCamStream, 5000);
+        this.timer = setInterval(this.getCamStream, 1000);
     },
     beforeDestroy() {
         this.cancelAutoUpdate();
