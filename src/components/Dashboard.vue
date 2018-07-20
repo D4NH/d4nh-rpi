@@ -25,12 +25,30 @@
           <p class="card-text"><small class="text-muted">Energy Consumption</small></p>
         </a>
       </div>
+    </div>
+    <div class="columns">
       <div class="column">
         <a
           class="box"
-          href="/ipcam/">
-          <strong>IP-cam</strong>
-          <p class="card-text"><small class="text-muted">HIKvision DS-2CD3345-I</small></p>
+          href="/rpimonitor/">
+          <strong>SmartHome</strong>
+          <p class="card-text"><small class="text-muted">Check RPi status</small></p>
+        </a>
+      </div>
+      <div class="column">
+        <a
+          class="box"
+          href="/rpimonitor/domoticz/">
+          <strong>Domoticz</strong>
+          <p class="card-text"><small class="text-muted">Check RPi status</small></p>
+        </a>
+      </div>
+      <div class="column">
+        <a
+          class="box"
+          href="/rpimonitor/dsmr/">
+          <strong>DSMR-reader</strong>
+          <p class="card-text"><small class="text-muted">Check RPi status</small></p>
         </a>
       </div>
     </div>
@@ -44,5 +62,4 @@ export default {
 </script>
 
 <style lang="scss">
-
 </style>

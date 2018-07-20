@@ -112,7 +112,7 @@ export default {
         this.getDevices();
     },
     mounted() {
-        this.timer = setInterval(this.getCamStream, 1000);
+        this.timer = setInterval(this.getCamStream, 2000);
     },
     beforeDestroy() {
         this.cancelAutoUpdate();

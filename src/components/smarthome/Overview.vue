@@ -51,7 +51,7 @@
                 <p>
                   <strong>HIKvision</strong><br>
                   <small>DS-2CD3345-I</small><br>
-                  <small><a href="#">Login</a></small>
+                  <small><a href="http://192.168.0.102">Login</a></small>
                 </p>
               </div>
             </div>
