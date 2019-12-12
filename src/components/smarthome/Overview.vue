@@ -85,7 +85,7 @@
       </div>
       <div
         v-for="(device, index) in devices"
-        v-if="device.idx === '56' || device.idx === '57'"
+        v-if="device.idx === '90' || device.idx === '91'"
         :key="index"
         class="column">
         <div class="box is-vertical-aligned">

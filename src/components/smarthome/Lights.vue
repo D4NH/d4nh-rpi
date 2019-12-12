@@ -4,7 +4,7 @@
     <p class="title">Huiskamer</p>
     <div
       v-for="(device, index) in devices"
-      v-if="device.idx === '56' || device.idx === '57' || device.idx === '49' || device.idx === '3'"
+      v-if="device.idx === '90' || device.idx === '91' || device.idx === '49' || device.idx === '3'"
       :key="index"
       class="columns">
       <div class="column">
