@@ -117,7 +117,7 @@ body {
     }
     padding-bottom: 20px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%),
-        url('./assets/StockSnap_6SMA09U7Y8.jpg') no-repeat;
+        url('./assets/pexels-photo-279719.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 

@@ -1,20 +1,20 @@
 <template>
   <div class="container">
     <div class="columns">
-      <div class="column">
+      <!-- <div class="column">
         <router-link
           class="box"
           to="/smarthome/overview">
           <strong>SmartHome</strong>
           <p class="card-text"><small class="text-muted">Dashboard</small></p>
         </router-link>
-      </div>
+      </div> -->
       <div class="column">
         <a
           class="box"
-          href="/domoticz/">
-          <strong>Domoticz</strong>
-          <p class="card-text"><small class="text-muted">RFXCom 433MHz</small></p>
+          href="https://hass.danhnguyen.nl">
+          <strong>Home Assistant</strong>
+          <p class="card-text"><small class="text-muted">Domotica</small></p>
         </a>
       </div>
       <div class="column">
@@ -25,30 +25,12 @@
           <p class="card-text"><small class="text-muted">Energy Consumption</small></p>
         </a>
       </div>
-    </div>
-    <div class="columns">
       <div class="column">
         <a
           class="box"
-          href="/rpimonitor/">
-          <strong>SmartHome</strong>
-          <p class="card-text"><small class="text-muted">Check RPi status</small></p>
-        </a>
-      </div>
-      <div class="column">
-        <a
-          class="box"
-          href="/rpimonitor/domoticz/">
-          <strong>Domoticz</strong>
-          <p class="card-text"><small class="text-muted">Check RPi status</small></p>
-        </a>
-      </div>
-      <div class="column">
-        <a
-          class="box"
-          href="/rpimonitor/dsmr/">
-          <strong>DSMR-reader</strong>
-          <p class="card-text"><small class="text-muted">Check RPi status</small></p>
+          href="/pihole/">
+          <strong>Pi-Hole</strong>
+          <p class="card-text"><small class="text-muted">Ad Blocking</small></p>
         </a>
       </div>
     </div>
